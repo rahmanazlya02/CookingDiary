@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Main */
+:root{
+    --bg-color-1: #f2f5ff;
+    --bg-color-2: #F8ECD0;
+    --bg-color-3: #f8f9fd;
+    --bg-color-4: #f7f0e6;
+    --grey-color: #rgba(0,0,0,0.20);
+    --heading-color: #2c2c2c;
+    --liact-color: #6a6383;
+    --text-color: black;
+    --primary-color: #D73529;
+    --font-family-1: 'poppins', sans-serif;
+    --font-family-2: 'Roboto', sans-serif;
+    --font-family-3: 'Cookie', sans-serif;
+    --nav-items-border-bottom: 1px solid rgba(0,0,0,0.07);
+    --color-scheme: light;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(rgba(15, 15, 15, 0.5),rgba(15, 15, 15, 0.5)), url('../assets/homebg.png');
+    background-position: center;
+    background-size: cover!important;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+}
+
+.container {
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+    margin:0 auto;
+    padding: 20px;
+    background-color: var(--primary-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; 
+    min-height: 100vh;
+}
+
+h1 {
+    margin-top: 5px;
+    text-align: center;
+    color: var(--bg-color-1);
+}
+
+.form-container {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid var(--bg-color-2);
+    border-radius: 8px;
+    background-color: var(--bg-color-2);
+    width: 100%;
+    max-width: 600px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--bg-color-1);
+    border-radius: 4px;
+    box-sizing: border-box; /* menghindari padding mempengaruhi lebar input */
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--primary-color);
+    color: var(--bg-color-1);
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--liact-color);
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+}
