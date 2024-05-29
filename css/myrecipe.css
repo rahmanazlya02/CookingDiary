@@ -128,7 +128,50 @@ button{
     visibility: hidden;
 }
 
-.nomor{
+.logos{
+    width: 100px;
+    height: 100px;
+}
+
+.center-content{
     text-align: center;
     justify-content: center;
+}
+
+/*untuk halaman users*/
+.button-container-users {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#container-users {
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    padding-left: 10px;
+    padding-right: 10px;
+    justify-content: center;
+}
+
+#container-users table {
+    display: inline-table; /* Atur tampilan tabel menjadi inline untuk memungkinkan penggunaan margin: auto; */
+    width: 100%; /* Atur lebar tabel secara otomatis */
+    max-width: 800px; 
+    border-collapse: collapse;
+}
+
+#container-users th, #container-users td {
+    padding: 10px;
+    text-align: center;
+}
+
+#container-users td a {
+    color: var(--heading-color);
+}
+
+#container-users td a:hover {
+    color: var(--primary-color);
+    font-weight: bold;
+    text-decoration: underline;
 }

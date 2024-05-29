@@ -41,10 +41,10 @@ if (isset($_POST["search"])) {
         </div>
         <ul id="nav-items" class="nav-items">
             <li><a href="index.php" class="nav-links">HOME</a></li>
-            <li><a href="about.php" target="_blank" class="nav-links">ABOUT</a></li>
-            <li><a href="wholerecipes.php" target="_blank" class="nav-links">RECIPES</a></li>
-            <li><a href="upload.php" target="_blank" class="nav-links">UPLOAD FOOD RECIPES</a></li>
-            <li><a href="myrecipe6.php" target="_blank" class="nav-links">MY RECIPE BOOK</a></li>
+            <li><a href="about.php"  class="nav-links">ABOUT</a></li>
+            <li><a href="wholerecipes.php" class="nav-links">RECIPES</a></li>
+            <li><a href="upload.php" class="nav-links">UPLOAD FOOD RECIPES</a></li>
+            <li><a href="myrecipe6.php" class="nav-links">MY RECIPE BOOK</a></li>
             <li><a href="#footer" class="nav-links">CONTACT</a></li>
         </ul>
 

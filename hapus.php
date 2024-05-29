@@ -15,14 +15,14 @@ if(hapus($idresep) > 0) {
     echo "
     <script>
         alert('data berhasil dihapus');
-        document.location.href='myrecipe3.php';
+        document.location.href='myrecipe6.php';
     </script>
     ";
 } else {
     echo "
     <script>
         alert('data gagal dihapus');
-        document.location.href='myrecipe3.php';
+        document.location.href='myrecipe6.php';
     </script>
 ";
 }

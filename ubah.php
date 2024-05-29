@@ -69,12 +69,12 @@ if( isset($_POST["submit"]) ) {
                     value = "<?= $resep["tipefood"]; ?>"><br><br>
 
             <label for="bahanresep">Bahan-Bahan: </label>
-            <input type="text" name="bahanresep" id="bahanresep" required
-                    value = "<?= $resep["bahanresep"]; ?>"><br><br>
+            <textarea name="bahanresep" id="bahanresep" required
+                rows="3" cols="50"><?= $resep["bahanresep"]; ?></textarea><br><br>
 
             <label for="petunjuk">Petunjuk: </label>
-            <input type="text"  name="petunjuk" id="petunjuk" required
-                    value = "<?= $resep["petunjuk"]; ?>"><br>
+            <textarea name="petunjuk" id="petunjuk" required
+                rows="5"><?= $resep["petunjuk"]; ?></textarea><br><br>
 
             <label for="foodpict">Foto Makanan: </label>
             <img src="image/<?= $resep['foodpict']; ?>" width="100"><br>

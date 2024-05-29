@@ -31,6 +31,12 @@ if( !isset($_SESSION["login"])) {
 
 // Inisialisasi variabel $keyword
 $keyword = isset($_POST["keyword"]) ? $_POST["keyword"] : "";
+$idmember = null; // Inisialisasi $idmember dengan null
+
+// Cek apakah parameter idmember ada di URL
+if (isset($_GET['idmember'])) {
+    $idmember = intval($_GET['idmember']);
+}
 
 // Cek apakah user adalah admin
 $username = $_SESSION["username"];
@@ -45,20 +51,22 @@ $resultTotalMembers = mysqli_stmt_get_result($stmtTotalMembers);
 $totalMembers = mysqli_fetch_assoc($resultTotalMembers)['total'];
 
 if ($isAdmin) {
-    // Mengurangi jumlah member jika user adalah admin
-    $totalMembers--;
-}
-
-if ($isAdmin) {
     // Debugging untuk admin
     error_log("Admin logged in: displaying all recipes");
-   // Jika admin, ambil semua resep
-   if ($keyword) {
-       $recipes = search($keyword);
-   } else {
-       $queryAllRecipes = "SELECT * FROM recipes JOIN members ON members.idmember = recipes.idmember ORDER BY idresep DESC";
-       $recipes = query($queryAllRecipes);
-   }
+   // Jika admin dan ada idmember di URL, ambil resep dari pengguna tersebut
+   if ($idmember) {
+    $queryUserRecipes = "SELECT recipes.*, members.username FROM recipes JOIN members ON members.idmember = recipes.idmember WHERE recipes.idmember = ? ORDER BY idresep DESC";
+    $stmtUserRecipes = mysqli_prepare($conn, $queryUserRecipes);
+    mysqli_stmt_bind_param($stmtUserRecipes, "i", $idmember);
+    mysqli_stmt_execute($stmtUserRecipes);
+    $recipes = mysqli_stmt_get_result($stmtUserRecipes);
+    } elseif ($keyword) {
+    $recipes = search($keyword);
+    } else { // Jika admin, ambil semua resep
+        $queryAllRecipes = "SELECT recipes.*, members.username FROM recipes JOIN members ON members.idmember = recipes.idmember ORDER BY idresep DESC";
+        $recipes = query($queryAllRecipes);
+    }
+    
    $queryTotalRecipes = "SELECT COUNT(*) AS total FROM recipes";
    $stmtTotalRecipes = mysqli_prepare($conn, $queryTotalRecipes);
    mysqli_stmt_execute($stmtTotalRecipes);
@@ -74,7 +82,7 @@ if ($isAdmin) {
     if ($keyword) {
         $recipes = searchmy($keyword);
     } else {
-        $queryUserRecipes = "SELECT * FROM recipes JOIN members ON members.idmember = recipes.idmember WHERE members.idmember = ? ORDER BY idresep DESC";
+        $queryUserRecipes = "SELECT recipes.*, members.username FROM recipes JOIN members ON members.idmember = recipes.idmember WHERE members.idmember = ? ORDER BY idresep DESC";
         $stmtUserRecipes = mysqli_prepare($conn, $queryUserRecipes);
         mysqli_stmt_bind_param($stmtUserRecipes, "i", $idmember);
         mysqli_stmt_execute($stmtUserRecipes);
@@ -101,7 +109,7 @@ if ($isAdmin) {
     </head>
 
     <body>
-        <br>
+        <img class="logos" src="assets/diary.png" alt="Logo CookingDiary">
         <h1><?= $_SESSION["username"];?>'s Recipes Book</h1>
         <br>
 
@@ -115,6 +123,9 @@ if ($isAdmin) {
         <div class="button-container">
             <a href="logout.php" class="button">Logout</a>
             <a href="upload.php" class="button">Upload</a>
+            <?php if ($isAdmin) : ?>
+            <a href="users.php" class="button">Users</a>
+            <?php endif; ?>
         </div>
 
         <!-- Menampilkan ringkasan -->
@@ -132,31 +143,31 @@ if ($isAdmin) {
         <div id="container-myrecipe">
         <table border="1" cellpadding="10" cellspacing="0">
             <tr>
-                <th>No.</th>
+                <th width="50">No.</th>
                 <?php if ($isAdmin) : ?>
                     <th>Member ID</th> <!-- Hanya tampil jika admin -->
                     <th>Username</th>
                 <?php endif; ?>
-                <th>Recipe Name</th>
-                <th>Cooking Time</th>
-                <th>Food Category</th>
-                <th width="150">Ingredients</th>
-                <th width="300">Directions</th>
-                <th>Recipe Image</th>
-                <th>Aksi</th>
+                <th width="120">Recipe Name</th>
+                <th width="100">Cooking Time</th>
+                <th width="120">Food Category</th>
+                <th width="350">Ingredients</th>
+                <th width="350">Directions</th>
+                <th width="150">Recipe Image</th>
+                <th width="50">Aksi</th>
             </tr>
             <?php $i = 1; ?>
             <?php foreach( $recipes as $row ) : ?>
             <!--foreach untuk looping array-->
             <tr>
-                <td class="nomor"><?= $i;?>.</td>
+                <td class="center-content"><?= $i;?>.</td>
                 <?php if ($isAdmin) : ?>
-                    <td><?= $row["idmember"]; ?></td>
-                    <td><?= $row["username"]; ?></td> <!-- Hanya tampil jika admin -->
+                    <td class="center-content"><?= $row["idmember"]; ?></td>
+                    <td class="center-content"><?= isset($row["username"]) ? $row["username"] : 'N/A'; ?></td> <!-- Hanya tampil jika admin -->
                 <?php endif; ?>
-                <td><?= $row["judulresep"]; ?></td>
-                <td><?= $row["timecook"]; ?></td>
-                <td><?= $row["tipefood"]; ?></td>
+                <td class="center-content"><?= $row["judulresep"]; ?></td>
+                <td class="center-content"><?= $row["timecook"]; ?></td>
+                <td class="center-content"><?= $row["tipefood"]; ?></td>
                 <td><?= $row["bahanresep"]; ?></td>
                 <td><?= $row["petunjuk"]; ?></td>
                 <td>

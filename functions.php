@@ -2,20 +2,22 @@
 //koneksi ke database
 $conn = mysqli_connect("localhost", "root", "", "cookingdiary");
 
-function query($query, $types = null, $params = null) {
+function query($query, $types = "", $params = []) {
     global $conn;
-    $stmt = mysqli_prepare($conn, $query);
-
-    if ($types && $params) {
-        // Bind parameters
-        mysqli_stmt_bind_param($stmt, $types, ...$params);
+    if ($stmt = mysqli_prepare($conn, $query)) {
+        if ($types && $params) {
+            mysqli_stmt_bind_param($stmt, $types, ...$params);
+        }
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+        $rows = [];
+        while ($row = mysqli_fetch_assoc($result)) {
+            $rows[] = $row;
+        }
+        return $rows;
+    } else {
+        return [];
     }
-
-    mysqli_stmt_execute($stmt);
-    $result = mysqli_stmt_get_result($stmt);
-    $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
-    return $rows;
 }
 
 function tambah($data) {
@@ -100,10 +102,14 @@ function hapus($idresep) {
     if(file_exists($location)) {
         unlink('image/'.$namaFile);
     }
-    mysqli_query($conn, "DELETE FROM recipes WHERE idresep= $idresep");
+
+    $query = "DELETE FROM recipes WHERE idresep= ?";
+    $stmt = mysqli_prepare($conn, $query);
+    mysqli_stmt_bind_param($stmt, "i", $idresep);
+    mysqli_stmt_execute($stmt);
     header("Location: myrecipe6.php");
     exit;
-    return mysqli_affected_rows($conn);
+    return mysqli_stmt_affected_rows($stmt);
 }
 
 function ubah($data) {
@@ -138,25 +144,25 @@ function ubah($data) {
 }
 
 function search($keyword) {
-    $query = "SELECT * FROM recipes WHERE
-                judulresep LIKE '%$keyword%' OR 
-                timecook LIKE '%$keyword%' OR
-                tipefood LIKE '%$keyword%' OR 
-                bahanresep LIKE '%$keyword%'
-             ";
-    return query($query);
+    $keyword = "%$keyword%";
+    $query = "SELECT recipes.*, members.username FROM recipes JOIN members ON members.idmember = recipes.idmember WHERE 
+            recipes.judulresep LIKE ? OR 
+            recipes.timecook LIKE ? OR
+            recipes.tipefood LIKE ? OR
+            recipes.bahanresep LIKE ?";
+    return query($query, "ssss", [$keyword, $keyword, $keyword, $keyword]);
 }
 
 function searchmy($keyword) {
+    global $conn;
     $idmember = $_SESSION["idmember"];
-    $query = "SELECT * FROM recipes WHERE
-                (judulresep LIKE '%$keyword%' OR 
-                timecook LIKE '%$keyword%' OR
-                tipefood LIKE '%$keyword%' OR 
-                bahanresep LIKE '%$keyword%') AND
-                idmember = $idmember
-             ";
-    return query($query);
+    $keyword = "%$keyword%";
+    $query = "SELECT recipes.*, members.username FROM recipes JOIN members ON members.idmember = recipes.idmember WHERE 
+            (recipes.judulresep LIKE ? OR
+            recipes.timecook LIKE ? OR
+            recipes.tipefood LIKE ? OR 
+            recipes.bahanresep LIKE ?) AND recipes.idmember = ?";
+    return query($query, "ssssi", [$keyword, $keyword, $keyword, $keyword, $idmember]);
 }
 
 function registrasi($data) {
@@ -172,6 +178,19 @@ function registrasi($data) {
         echo "<script>
                 alert('Email tidak valid! Harap masukkan email yang benar.');
              </script>";
+        return false;
+    }
+
+    // Cek apakah email sudah terdaftar
+    $query = "SELECT email FROM members WHERE email = ?";
+    $stmt = mysqli_prepare($conn, $query);
+    mysqli_stmt_bind_param($stmt, "s", $email);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_store_result($stmt);
+    if (mysqli_stmt_num_rows($stmt) > 0) {
+        echo "<script>
+                alert('Maaf, email sudah didaftarkan. Silakan gunakan email lain.');
+            </script>";
         return false;
     }
    

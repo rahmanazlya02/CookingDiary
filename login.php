@@ -83,13 +83,16 @@ if(isset($_POST["login"])) {
 
             header("Location: myrecipe6.php");
             exit;
-        }
-    }
-
-    $error = true;
-    if(isset($error)) {
-        echo "<script>
+        } else {
+            // jika password salah
+            echo "<script>
                 alert('Username atau Password salah! harap periksa kembali.');
+            </script>";
+        }
+    } else {
+        // jika username belum terdaftar
+        echo "<script>
+                alert('Username belum terdaftar! Silahkan registrasi akun terlebih dahulu.');
             </script>";
     }
 }
