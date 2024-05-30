@@ -39,6 +39,23 @@ if( isset($_POST["submit"]) ) {
     <link rel="stylesheet" href="css/upload.css">
 </head>
 <body>
+<header>
+        <div class="container-header">
+            <div class="logo">
+                <h5>Cooking<span> Diary!</span></h5>
+            </div>
+            <nav id="nav-bar">
+                <ul class="nav-list">
+                    <li><a href="index.php" class="nav-links">HOME</a></li>
+                    <li><a href="about.php" class="nav-links">ABOUT</a></li>
+                    <li><a href="wholerecipes.php" class="nav-links">RECIPES</a></li>
+                    <li><a href="upload.php" class="nav-links">UPLOAD FOOD RECIPES</a></li>
+                    <li><a href="myrecipe6.php" class="nav-links">MY RECIPE BOOK</a></li>
+                    <li><a href="#footer" class="nav-links">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
     <div class="container">
         <h1>Upload Resep Makanan Kreasi Anda</h1>
 
@@ -61,6 +78,11 @@ if( isset($_POST["submit"]) ) {
             </form>
         </div>
     </div>
-
+    <footer id="footer">
+            <div>
+                <address>Copyright &copy 2024 Cooking Diary</address>
+                <address><a href ="mailto:222212787@stis.ac.id">Created by Nazlya Rahma Susanto (222212787@stis.ac.id)</a>
+            </div>
+    </footer>
 </body>
 </html>

@@ -48,47 +48,47 @@ $recipes = mysqli_fetch_all($result, MYSQLI_ASSOC);
 ?>
 
 <table border="1" cellpadding="10" cellspacing="0">
-            <tr>
-                <th>No.</th>
-                <?php if ($isAdmin) : ?>
-                    <th>Member ID</th> <!-- Hanya tampil jika admin -->
-                    <th>Username</th>
-                <?php endif; ?>
-                <th>Recipe Name</th>
-                <th>Cooking Time</th>
-                <th>Food Category</th>
-                <th width="150">Ingredients</th>
-                <th width="300">Directions</th>
-                <th>Recipe Image</th>
-                <th>Aksi</th>
-            </tr>
-            <?php $i = 1; ?>
-            <?php foreach( $recipes as $row ) : ?>
-            <!--foreach untuk looping array-->
-            <tr>
-                <td class="nomor"><?= $i;?>.</td>
-                <?php if ($isAdmin) : ?>
-                    <td><?= $row["idmember"]; ?></td>
-                    <td><?= $row["username"]; ?></td> <!-- Hanya tampil jika admin -->
-                <?php endif; ?>
-                <td><?= $row["judulresep"]; ?></td>
-                <td><?= $row["timecook"]; ?></td>
-                <td><?= $row["tipefood"]; ?></td>
-                <td><?= $row["bahanresep"]; ?></td>
-                <td><?= $row["petunjuk"]; ?></td>
-                <td>
-                    <img src="image/<?= $row["foodpict"]; ?>" width="100">
-                </td>
-                <td>
-                    <a href="viewrecipe.php?idresep=<?= $row["idresep"];?>"><img src='assets/view.png' 
-                    style='width:30px;height:30px;'></a>
-                    <a href="ubah.php?idresep=<?= $row["idresep"];?>"><img src='assets/edit.png' 
-                    style='width:30px;height:30px;'></a>
-                    <a href="hapus.php?idresep=<?= $row["idresep"]; ?>" onclick="
-                    return confirm('yakin hapus resep?');"><img src='assets/remove.png' 
-                    style='width:27px;height:27px;'></a>
-                </td>
-            </tr>
-            <?php $i++; ?>
-            <?php endforeach; ?>
+    <tr>
+        <th width="50">No.</th>
+            <?php if ($isAdmin) : ?>
+                <th>Member ID</th> <!-- Hanya tampil jika admin -->
+                <th>Username</th>
+            <?php endif; ?>
+        <th width="120">Recipe Name</th>
+        <th width="100">Cooking Time</th>
+        <th width="120">Food Category</th>
+        <th width="350">Ingredients</th>
+        <th width="350">Directions</th>
+        <th width="150">Recipe Image</th>
+        <th width="50">Aksi</th>
+    </tr>
+        <?php $i = 1; ?>
+        <?php foreach( $recipes as $row ) : ?>
+        <!--foreach untuk looping array-->
+        <tr>
+            <td class="center-content"><?= $i;?>.</td>
+            <?php if ($isAdmin) : ?>
+                <td class="center-content"><?= $row["idmember"]; ?></td>
+                <td class="center-content"><?= isset($row["username"]) ? $row["username"] : 'N/A'; ?></td> <!-- Hanya tampil jika admin -->
+            <?php endif; ?>
+            <td class="center-content"><?= $row["judulresep"]; ?></td>
+            <td class="center-content"><?= $row["timecook"]; ?></td>
+            <td class="center-content"><?= $row["tipefood"]; ?></td>
+            <td><?= $row["bahanresep"]; ?></td>
+            <td><?= $row["petunjuk"]; ?></td>
+            <td>
+                <img src="image/<?= $row["foodpict"]; ?>" width="100">
+            </td>
+            <td>
+                <a href="viewrecipe.php?idresep=<?= $row["idresep"];?>"><img src='assets/view.png' 
+                style='width:30px;height:30px;'></a>
+                <a href="ubah.php?idresep=<?= $row["idresep"];?>"><img src='assets/edit.png' 
+                style='width:30px;height:30px;'></a>
+                <a href="hapus.php?idresep=<?= $row["idresep"]; ?>" onclick="
+                return confirm('yakin hapus resep?');"><img src='assets/remove.png' 
+                style='width:27px;height:27px;'></a>
+            </td>
+        </tr>
+        <?php $i++; ?>
+        <?php endforeach; ?>
 </table>

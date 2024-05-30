@@ -18,8 +18,8 @@ html {
     --bg-color-1: #ffff;
     --bg-color-2: #f9f6f0;
     --bg-color-3: #f7f0e6;
-    --grey-color: #rgba(0,0,0,0.20);
-    --heading-color: #2c2c2c;
+    --grey-color: rgba(0,0,0,0.20);
+    --heading-color: #101418;
     --text-color: #353535;
     --primary-color: #D73529;
     --secondary-color: #ffe6e5;
@@ -32,8 +32,8 @@ html {
 body {
     font-family: Arial, sans-serif;
     background-color: var(--bg-color-3);
-    padding: 20px;
 }
+
 h1 {
     text-align: center;
     margin-bottom: 20px;
@@ -43,6 +43,57 @@ h1 {
 a {
     text-decoration: none;
     color: var(--primary-color);
+}
+
+header{
+    height: 70px;
+    width: 100%;
+    background: var(--heading-color);
+    color: var(--bg-color-1);
+    display: inline-flex;
+    align-items: center;
+    position: fixed;
+}
+
+.container{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo h5{
+    font-size: 22px;
+    color: var(--primary-color);
+    display: inline-block;
+}
+
+.logo h5 span{
+    color: white; 
+}
+
+nav ul li {
+    list-style: none;
+    display: inline-block;
+    margin-right: 10px;
+    font-weight: 550;
+}
+
+nav ul li a:hover{
+    color:var(--bg-color-1);
+    background-color:var(--primary-color);
+    border-radius: 5px;
+    padding:3px 5px;
+}
+
+.nav-links{
+    color: white;
+    text-decoration: none;
+}
+
+.logo{
+    font-size: 24px;
 }
 
 .button {
@@ -67,6 +118,18 @@ a {
     display: flex;
     gap: 5px; /* Tambahkan jarak antar tombol jika diperlukan */
     margin-bottom: 20px;
+    padding-left: 12px;
+}
+
+.summary{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#container-myrecipe{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
 }
 
 table {
@@ -142,7 +205,7 @@ button{
 .button-container-users {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 
 #container-users {
@@ -151,6 +214,7 @@ button{
     overflow: hidden;
     padding-left: 10px;
     padding-right: 10px;
+    padding-bottom: 45px;
     justify-content: center;
 }
 
@@ -174,4 +238,40 @@ button{
     color: var(--primary-color);
     font-weight: bold;
     text-decoration: underline;
+}
+
+footer{
+    background: var(--heading-color);
+    padding: 15px 0px;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    width: 100%;
+}
+
+footer a {
+    color: var(--bg-color-1);
+    text-decoration: none;
+}
+
+#copyright{
+    padding-top: 5px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    footer {
+        position: fixed;
+        bottom: 0;
+        left: 0; /* Footer akan tetap full-width hingga sisi kanan halaman */
+        right: 0; /* Footer akan tetap full-width hingga sisi kanan halaman */
+    }
+
+    #container-myrecipe{
+        padding-bottom: 90px;
+    }
 }

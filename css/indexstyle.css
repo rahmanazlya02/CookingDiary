@@ -18,7 +18,7 @@ html {
     --bg-color-1: #ffff;
     --bg-color-2: #f9f6f0;
     --bg-color-3: #f7f0e6;
-    --grey-color: #rgba(0,0,0,0.20);
+    --grey-color: rgba(0,0,0,0.20);
     --heading-color: #2c2c2c;
     --text-color: #353535;
     --text2-color : white;
@@ -68,7 +68,7 @@ body{
 
 .flex-col{
     display: flex;
-    direction: column;
+    flex-direction: column;
     flex-wrap: wrap;
 }
 

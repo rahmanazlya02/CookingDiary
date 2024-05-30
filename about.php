@@ -21,9 +21,6 @@ if (isset($_POST["search"])) {
     <title>About Page | CookingDiary</title>
 
     <link rel="stylesheet" href="css/about.css">
-
-    <!-----------BoxIcon Stylesheet Link
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">----------->
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
@@ -35,7 +32,7 @@ if (isset($_POST["search"])) {
     </header>
     
     <!--------Navbar Start--------->
-    <nav id="navbar" class="navbar flex-row">
+    <nav id="navbar">
         <div class="nav-icon menu-btn-wrapper">
             <i id="menu-btn" class="menu-btn bx bx-menu"></i>
         </div>
@@ -81,9 +78,9 @@ if (isset($_POST["search"])) {
         </div>
         <p>Website kami menyediakan fitur-fitur untuk berbagi pengalaman memasak, foto hasil masakan Anda, dan tips masak-memasak dengan sesama pengguna situs kami.</p>
         <ol>
+            <li><b>RECIPES: </b>Cari Resep dari resep-resep yang telah diunggah oleh para pengguna Web Cooking Diary</li>
             <li><b>UPLOAD FOOD RECIPES:</b> Tulis resep yang Anda miliki dan unggah bersama foto hasil masakan Anda</li>
-            <li><b>RECIPE BOOK:</b> Kumpulan resep makanan kreasi Anda setelah mendaftar menjadi anggota situs Cooking Diary</li>
-            <li><b>PROFILE: </b>Buat Cooking Diary-mu dengan mendaftarkan akun Anda di situs Web kami</li>
+            <li><b>MY RECIPE BOOK:</b> Kumpulan resep makanan kreasi Anda setelah mendaftar menjadi anggota situs Cooking Diary</li>
             <li><b>CONTACT:</b> Hubungi kami apabila menemukan kendala atau ingin mengetahui informasi lain terkait situs web Cooking Diary kami ini ya...</li>
         </ol>
         <p>YUKKK, gabung dengan komunitas Cooking Diary yang bersemangat dalam menciptakan dan menikmati hidangan-hidangan lezat kreasi Anda...!</p>

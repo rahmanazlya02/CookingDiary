@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 require 'functions.php'; //artinya manggil file function atau bisa juga include
 
 //untuk menentukan apa yang tampil di database
@@ -35,15 +36,15 @@ if (isset($_POST["search"])) {
         <header>
             <div class="container">
                 <div class="logo">
-                    <h5>Cooking<span> Diary!</span> Recipes</h5>
+                    <h5>Cooking<span> Diary!</span></h5>
                 </div>
-                <nav>
+                <nav id = "nav-bar">
                     <ul class="nav-list">
                         <li><a href="index.php" class="nav-links">HOME</a></li>
-                        <li><a href="about.php" target="_blank" class="nav-links">ABOUT</a></li>
-                        <li><a href="wholerecipes.php" target="_blank" class="nav-links">RECIPES</a></li>
-                        <li><a href="upload.php" target="_blank" class="nav-links">UPLOAD FOOD RECIPES</a></li>
-                        <li><a href="myrecipe6.php" target="_blank" class="nav-links">MY RECIPE BOOK</a></li>
+                        <li><a href="about.php" class="nav-links">ABOUT</a></li>
+                        <li><a href="wholerecipes.php" class="nav-links">RECIPES</a></li>
+                        <li><a href="upload.php" class="nav-links">UPLOAD FOOD RECIPES</a></li>
+                        <li><a href="myrecipe6.php" class="nav-links">MY RECIPE BOOK</a></li>
                         <li><a href="#footer" class="nav-links">CONTACT</a></li>
                     </ul>
                 </nav>

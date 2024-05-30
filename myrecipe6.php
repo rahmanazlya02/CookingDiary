@@ -41,8 +41,8 @@ if (isset($_GET['idmember'])) {
 // Cek apakah user adalah admin
 $username = $_SESSION["username"];
 // Verifikasi status admin
-$isAdmin = ($username == "adminCookDy" && isset($_SESSION["password"]) && $_SESSION["password"] == "adminCookDy1");
-//$isAdmin = ($_SESSION["username"] == "adminCookDy" && isset($_COOKIE['key']) && $_COOKIE['key'] === hash('sha256', "admincookdy"));
+//$isAdmin = ($_SESSION["username"] == "adminCookDy");
+$isAdmin = ($_SESSION["username"] == "adminCookDy" && isset($_COOKIE['key']) && $_COOKIE['key'] === hash('sha256', "admincookdy"));
 // Mengambil jumlah member dari tabel members
 $queryTotalMembers = "SELECT COUNT(*) AS total FROM members";
 $stmtTotalMembers = mysqli_prepare($conn, $queryTotalMembers);
@@ -109,6 +109,24 @@ if ($isAdmin) {
     </head>
 
     <body>
+        <header>
+        <div class="container">
+            <div class="logo">
+                <h5>Cooking<span> Diary!</span></h5>
+                </div>
+                <nav id = "nav-bar">
+                    <ul class="nav-list">
+                        <li><a href="index.php" class="nav-links">HOME</a></li>
+                        <li><a href="about.php" class="nav-links">ABOUT</a></li>
+                        <li><a href="wholerecipes.php" class="nav-links">RECIPES</a></li>
+                        <li><a href="upload.php" class="nav-links">UPLOAD FOOD RECIPES</a></li>
+                        <li><a href="myrecipe6.php" class="nav-links">MY RECIPE BOOK</a></li>
+                        <li><a href="#footer" class="nav-links">CONTACT</a></li>
+                    </ul>
+                </nav>
+        </div>
+        </header>
+        <br><br><br><br>
         <img class="logos" src="assets/diary.png" alt="Logo CookingDiary">
         <h1><?= $_SESSION["username"];?>'s Recipes Book</h1>
         <br>
@@ -187,6 +205,12 @@ if ($isAdmin) {
             <?php endforeach; ?>
         </table>
         </div>
+        <footer id="footer">
+            <div>
+                <address>Copyright &copy 2024 Cooking Diary</address>
+                <address><a href ="mailto:222212787@stis.ac.id">Created by Nazlya Rahma Susanto (222212787@stis.ac.id)</a>
+            </div>
+        </footer>
         <script src="js/myrecipes.js"></script>
     </body>
 </html>

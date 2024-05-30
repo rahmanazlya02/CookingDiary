@@ -1,12 +1,12 @@
+/* jshint esversion: 6 */
 //Navbar
 window.addEventListener('scroll', function(){
     let navbar = document.getElementById("navbar");
     //Toggles Fixed Class In Navbar On Scroll 
-    navbar.classList.toggle('fixed', this.window.scrollY > 0)
-})
+    navbar.classList.toggle('fixed', this.window.scrollY > 0);
+});
 
 //Nav Buttons
-let menuBtn = document.querySelector('.menu-btn');
 let searchBtn = document.querySelector('.searchbtn');
 let darkBtn = document.querySelector('.darkbtn');
 
@@ -23,7 +23,7 @@ searchBtn.onclick = function(){
         searchBtn.classList.remove("bx-x");
         searchBtn.classList.add("bx-search-alt-2");
     }
-}
+};
 
 darkBtn.onclick = function(){
     //Toggles Dark Mode Class to Body On Click

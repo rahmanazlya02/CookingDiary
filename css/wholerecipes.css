@@ -6,7 +6,7 @@
     --bg-color-1: #ffff;
     --bg-color-2: #f9f6f0;
     --bg-color-3: #f7f0e6;
-    --grey-color: #rgba(0,0,0,0.20);
+    --grey-color: rgba(0,0,0,0.20);
     --heading-color: #101418;
     --text-color: #353535;
     --primary-color: #D73529;
@@ -182,7 +182,7 @@ button {
  }
 
  footer{
-    background: #333;
+    background: var(--heading-color);
     padding: 20px 0;
     color: #fff;
     text-align: center;

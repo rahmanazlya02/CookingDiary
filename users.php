@@ -23,6 +23,24 @@ $users = query($queryUsers);
     <title>Daftar Members | CookingDiary</title>
 </head>
 <body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h5>Cooking<span> Diary!</span> Recipes</h5>
+                </div>
+                <nav id = "nav-bar">
+                    <ul class="nav-list">
+                        <li><a href="index.php" class="nav-links">HOME</a></li>
+                        <li><a href="about.php" class="nav-links">ABOUT</a></li>
+                        <li><a href="wholerecipes.php" class="nav-links">RECIPES</a></li>
+                        <li><a href="upload.php" class="nav-links">UPLOAD FOOD RECIPES</a></li>
+                        <li><a href="myrecipe6.php" class="nav-links">MY RECIPE BOOK</a></li>
+                        <li><a href="#footer" class="nav-links">CONTACT</a></li>
+                    </ul>
+                </nav>
+        </div>
+    </header>
+    <br><br><br><br>
     <img class="logos" src="assets/diary.png" alt="Logo CookingDiary">
     <h1>Daftar Members Cooking Diary</h1>
     <div class="button-container-users">
@@ -50,5 +68,11 @@ $users = query($queryUsers);
         </table>
     </div>
     </form>
+    <footer id="footer">
+            <div>
+                <address>Copyright &copy 2024 Cooking Diary</address>
+                <address><a href ="mailto:222212787@stis.ac.id">Created by Nazlya Rahma Susanto (222212787@stis.ac.id)</a>
+            </div>
+    </footer>
 </body>
 </html>
