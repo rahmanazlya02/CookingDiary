@@ -63,7 +63,7 @@ if( isset($_POST["submit"]) ) {
         <div class="form-container">
             <form action="" method="post" enctype="multipart/form-data" id="formTambahResep" >
                 <label for="judulresep">Judul Resep:</label>
-                <input type="text" id="judulresep" name="judulresep" required><br><br>
+                <input type="text" id="judulresep" name="judulresep" required autocomplete="off"><br><br>
                 <label for="timecook">Waktu Memasak (menit):</label>
                 <input type="text" id="timecook" name="timecook" required><br><br>
                 <label for="tipefood">Tipe Makanan:</label>

@@ -114,10 +114,10 @@ if(isset($_POST["login"])) {
                 <form action="" method="post">
                     <h1 style="text-align: center;">Create Account</h1>
                     <span>Use your email for registration</span>
-                    <input type="text" name="username" id="username" placeholder="Username">
-                    <input type="email" name="email" id="email" placeholder="Email">
-                    <input type="password" name="password" id="password" placeholder="Password">
-                    <input type="password" name="password2" id="password2" placeholder="Confirm Your Password">
+                    <input type="text" name="username" id="username" placeholder="Username" autocomplete="off">
+                    <input type="email" name="email" id="email" placeholder="Email" autocomplete="off">
+                    <input type="password" name="password" id="password" placeholder="Password" autocomplete="off">
+                    <input type="password" name="password2" id="password2" placeholder="Confirm Your Password" autocomplete="off">
                     <button type="submit" name="register">Sign Up</button>
                 </form>
             </div>
@@ -131,8 +131,8 @@ if(isset($_POST["login"])) {
                         <?php endif; ?>
 
                         <span>Use your username and password</span>
-                        <input type="text" id="username" name="username" placeholder="Username">
-                        <input type="password" id="password" name="password" placeholder="Password">
+                        <input type="text" id="username" name="username" placeholder="Username" autocomplete="off">
+                        <input type="password" id="password" name="password" placeholder="Password" autocomplete="off">
                         <label for="remember" style="font-size: 11px; margin-left:5px;">Remember Me?</label>
                         <input type="checkbox" name="remember" id="remember">
                         <!--<a href="#">Forget Your Password?</a>-->
