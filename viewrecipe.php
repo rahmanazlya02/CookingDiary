@@ -4,9 +4,11 @@ require 'functions.php';
 //Ambil data di URL
 $idresep = $_GET["idresep"];
 
-//query data mahasiswa berdasarkan id 
-$recipe = query("SELECT * FROM recipes WHERE idresep = $idresep")[0];
-
+//query data resep berdasarkan id 
+$recipe = query("SELECT recipes.*, members.email AS email
+                 FROM recipes
+                 JOIN members ON members.idmember = recipes.idmember
+                 WHERE recipes.idresep = $idresep")[0];
 
 ?>
 
@@ -41,6 +43,10 @@ $recipe = query("SELECT * FROM recipes WHERE idresep = $idresep")[0];
             <p>
                 <?php echo $recipe['petunjuk']; ?>
             </p>
+        </div>
+        <div class="recipe-member">
+            <h3>Recipe by :</h3>
+            <p><a href="mailto:<?= $recipe['email']; ?>"><?= $recipe['email']; ?></a></p>
         </div>
     </div>
 </div>
