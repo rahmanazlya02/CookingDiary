@@ -6,7 +6,7 @@ $query = "SELECT * FROM recipes WHERE
         timecook LIKE ? OR
         tipefood LIKE ? OR 
         bahanresep LIKE ?
-        ";
+        ORDER BY idresep DESC";
 
 // Persiapkan statement
 $stmt = mysqli_prepare($conn, $query);
