@@ -111,3 +111,26 @@ body {
 .image-container {
     text-align: center; /* Memposisikan gambar di tengah */
 }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .recipe-card {
+        padding: 15px;
+    }
+
+    .recipe-title {
+        font-size: 28px;
+    }
+    
+    .recipe-info span {
+        margin-bottom: 10px;
+    }
+
+    .recipe-content {
+        font-size: 14px;
+    }
+}

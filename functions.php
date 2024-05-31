@@ -92,7 +92,6 @@ function upload(){
 
 }
 
-
 function hapus($idresep) {
     global $conn;
     $result = mysqli_query($conn, "SELECT foodpict FROM recipes WHERE idresep = $idresep");
