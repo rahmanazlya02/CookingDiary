@@ -27,13 +27,13 @@ html {
     scroll-behavior: smooth;
 }
 
-body{
+body {
     width: 100%;
     min-height: 100vh;
     background: var(--bg-color-3);
 }
 
-header{
+header {
     height: 70px;
     width: 100%;
     background: var(--heading-color);
@@ -43,7 +43,7 @@ header{
     position: fixed;
 }
 
-.container{
+.container {
     width: 90%;
     margin: 0 auto;
     display: flex;
@@ -51,13 +51,13 @@ header{
     justify-content: space-between;
 }
 
-.logo h5{
+.logo h5 {
     font-size: 22px;
     color: var(--primary-color);
     display: inline-block;
 }
 
-.logo h5 span{
+.logo h5 span {
     color: white; 
 }
 
@@ -68,26 +68,26 @@ nav ul li {
     font-weight: 550;
 }
 
-nav ul li a:hover{
-    color:var(--bg-color-1);
-    background-color:var(--primary-color);
+nav ul li a:hover {
+    color: var(--bg-color-1);
+    background-color: var(--primary-color);
     border-radius: 5px;
-    padding:3px 5px;
+    padding: 3px 5px;
 }
 
-.nav-links{
+.nav-links {
     color: white;
     text-decoration: none;
 }
 
-.logo{
+.logo {
     font-size: 24px;
 }
 
-.hero{
+.hero {
     width: 100%;
     height: 400px;
-    background: linear-gradient(rgba(15, 15, 15, 0.5),rgba(15, 15, 15, 0.5)), url('../assets/2.png');
+    background: linear-gradient(rgba(15, 15, 15, 0.5), rgba(15, 15, 15, 0.5)), url('../assets/2.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -97,12 +97,12 @@ nav ul li a:hover{
     margin-bottom: 20px;
 }
 
-.hero h2{
+.hero h2 {
     font-size: 36px;
     margin-bottom: 10px;
 }
 
-.hero p{
+.hero p {
     font-size: 20px;
     margin-bottom: 10px;
 }
@@ -111,7 +111,7 @@ button {
     visibility: hidden;
 }
 
-.search-box input{
+.search-box input {
     width: 35%;
     padding: 10px;
     outline: none;
@@ -121,19 +121,18 @@ button {
     border: 3px solid rgb(245, 37, 9);
 }
 
-
-/*Recipe Section*/
-.recipes{
+/* Recipe Section */
+.recipes {
     padding: 20px 0;
 }
 
-.recipes h1{
+.recipes h1 {
     text-align: center;
     margin-bottom: 30px;
     font-size: 28px;
 }
 
-.recipe-section{
+.recipe-section {
     width: 90%;
     margin: 0 auto;
     display: grid;
@@ -141,60 +140,63 @@ button {
     column-gap: 10px;
 }
 
-.recipe-card{
+.recipe-card {
     background: var(--bg-color-1);
     margin: 30px 10px;
     border-radius: 10px;
     border: 1px solid #ccc;
     overflow: hidden;
     box-shadow: 0 4px 8px rgb(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.recipe-card img{
+.recipe-card img {
     width: 100%;
     height: 200px;
     object-fit: cover;
 }
 
-.recipe-card h2{
-   font-size: 20px;
-   padding: 15px;
+.recipe-card h2 {
+    font-size: 20px;
+    padding: 15px;
 }
 
-.recipe-card p{
+.recipe-card p {
     font-size: 16px;
     padding: 0 15px 15px;
- }
+}
 
- .recipe-card a{
-    display: block;
+.recipe-card a {
     text-align: center;
     text-decoration: none;
     background: var(--text-color);
     color: #fff;
     padding: 10px 0;
     cursor: pointer;
- }
+    margin-top: auto;
+}
 
- .recipe-card a:hover{
-    color:var(--bg-color-1);
-    background-color:var(--primary-color);
- }
+.recipe-card a:hover {
+    color: var(--bg-color-1);
+    background-color: var(--primary-color);
+}
 
- footer{
+footer {
     background: var(--heading-color);
     padding: 20px 0;
     color: #fff;
     text-align: center;
     font-size: 14px;
- }
+}
 
- footer a {
+footer a {
     color: var(--bg-color-1);
     text-decoration: none;
 }
 
-#copyright{
+#copyright {
     padding-top: 5px;
 }
 
@@ -203,13 +205,12 @@ footer a:hover {
     color: var(--primary-color);
 }
 
- @media only screen and (max-width: 768px){
-    .hero h2{
+@media only screen and (max-width: 768px) {
+    .hero h2 {
         font-size: 28px;
     }
 
-    .hero p{
+    .hero p {
         font-size: 15px;
     }
- }
-
+}

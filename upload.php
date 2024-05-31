@@ -56,6 +56,7 @@ if( isset($_POST["submit"]) ) {
             </nav>
         </div>
     </header>
+    <div id="main-content">
     <div class="container">
         <h1>Upload Resep Makanan Kreasi Anda</h1>
 
@@ -77,6 +78,7 @@ if( isset($_POST["submit"]) ) {
                 <button type="submit" name="submit">Upload Resep</button>
             </form>
         </div>
+    </div>
     </div>
     <footer id="footer">
             <div>

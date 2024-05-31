@@ -25,10 +25,13 @@
     --color-scheme: light;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
     font-family: Arial, sans-serif;
     background: linear-gradient(rgba(15, 15, 15, 0.5),rgba(15, 15, 15, 0.5)), url('../assets/homebg.png');
     background-position: center;
@@ -37,12 +40,18 @@ body {
     box-sizing: border-box;
 }
 
-.container {
-    justify-content: center;
+#main-content {
+    flex: 1;
+    display: flex;
     align-items: center;
+    justify-content: center;
+}
+
+.container {
     max-width: 800px;
     margin-top: 100px;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
+    margin-top: 120px;
     padding: 20px;
     background-color: var(--primary-color);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -77,7 +86,7 @@ textarea {
     margin-bottom: 10px;
     border: 1px solid var(--bg-color-1);
     border-radius: 4px;
-    box-sizing: border-box; /* menghindari padding mempengaruhi lebar input */
+    box-sizing: border-box;
 }
 
 button {
@@ -146,13 +155,11 @@ nav ul li a:hover {
 
 footer {
     background: var(--heading-color);
-    padding: 10px 0px;
+    padding: 20px 0px;
     color: #fff;
     text-align: center;
     font-size: 14px;
     width: 100%;
-    position:fixed;
-    bottom: 0;
 }
 
 footer a {
@@ -171,6 +178,6 @@ footer a:hover {
 
 @media (max-width: 768px) {
     .container {
-        padding: 10px;
+        padding: 20px;
     }
 }
