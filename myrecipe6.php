@@ -186,8 +186,8 @@ if ($isAdmin) {
                 <td class="center-content"><?= $row["judulresep"]; ?></td>
                 <td class="center-content"><?= $row["timecook"]; ?></td>
                 <td class="center-content"><?= $row["tipefood"]; ?></td>
-                <td><?= $row["bahanresep"]; ?></td>
-                <td><?= $row["petunjuk"]; ?></td>
+                <td class="justify-content"><?= $row["bahanresep"]; ?></td>
+                <td class="justify-content"><?= $row["petunjuk"]; ?></td>
                 <td>
                     <img src="image/<?= $row["foodpict"]; ?>" width="100">
                 </td>

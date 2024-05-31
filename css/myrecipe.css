@@ -206,6 +206,10 @@ button {
     justify-content: center;
 }
 
+.justify-content {
+    text-align: justify;
+}
+
 /* untuk halaman users */
 .button-container-users {
     display: flex;
