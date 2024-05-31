@@ -61,7 +61,7 @@ $users = query($queryUsers);
                 <td class="nomor"><?= $i;?>.</td>
                 <td><a href="myrecipe6.php?idmember=<?= $user['idmember']; ?>"><?= $user['idmember']; ?></a></td>
                 <td><a href="myrecipe6.php?idmember=<?= $user['idmember']; ?>"><?= $user['username']; ?></a></td>
-                <td><?= $user['email']; ?></td>
+                <td><a href="mailto:<?= $user['email']; ?>"><?= $user['email']; ?></a></td>
             </tr>
             <?php $i++; ?>
             <?php endforeach; ?>
