@@ -51,7 +51,7 @@ $users = query($queryUsers);
         <table border="1" cellpadding="10" cellspacing="0">
             <tr>
                 <th width="10">No.</th>
-                <th>ID User</th>
+                <th>Member ID</th>
                 <th>Username</th>
                 <th>Email</th>
             </tr>

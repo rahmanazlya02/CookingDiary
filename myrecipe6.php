@@ -142,7 +142,7 @@ if ($isAdmin) {
             <a href="logout.php" class="button">Logout</a>
             <a href="upload.php" class="button">Upload</a>
             <?php if ($isAdmin) : ?>
-            <a href="users.php" class="button">Users</a>
+            <a href="users.php" class="button">Members</a>
             <?php endif; ?>
         </div>
 
