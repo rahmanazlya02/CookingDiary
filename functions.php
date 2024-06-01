@@ -1,6 +1,6 @@
 <?php
 //koneksi ke database
-$conn = mysqli_connect("localhost", "root", "", "cookingdiary");
+$conn = mysqli_connect("localhost", "naza3214_nazlyarahma", "NazlyaRahma02*", "naza3214_cookingdiary");
 
 function query($query, $types = "", $params = []) {
     global $conn;
