@@ -8,7 +8,7 @@
 }
 
 /* Main */
-:root{
+:root {
     --bg-color-1: #f2f5ff;
     --bg-color-2: #F8ECD0;
     --bg-color-3: #f8f9fd;
@@ -33,12 +33,12 @@ body {
     display: flex;
     flex-direction: column;
     font-family: Arial, sans-serif;
-    background: linear-gradient(rgba(15, 15, 15, 0.5),rgba(15, 15, 15, 0.5)), url('../assets/homebg.png');
+    background: linear-gradient(rgba(15, 15, 15, 0.5), rgba(15, 15, 15, 0.5)), url('../assets/homebg.png');
     background-position: center;
-    background-size: cover!important;
+    background-size: cover !important;
     background-repeat: no-repeat;
     box-sizing: border-box;
-    height: 100%;
+    min-height: 100vh;
 }
 
 #main-content {
@@ -46,18 +46,17 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
 }
 
 .container {
     width: 100%;
     max-width: 800px;
-    margin: 80px auto;
+    margin: 120px auto 50px auto;
     padding: 20px;
     background-color: var(--primary-color);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    min-height: 50vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -135,7 +134,7 @@ header {
 }
 
 .logo h5 span {
-    color: white; 
+    color: white;
 }
 
 nav ul li {
@@ -157,7 +156,6 @@ nav ul li a:hover {
     text-decoration: none;
 }
 
-
 footer {
     background: var(--heading-color);
     padding: 20px 0px;
@@ -172,10 +170,6 @@ footer a {
     text-decoration: none;
 }
 
-#copyright {
-    padding-top: 5px;
-}
-
 footer a:hover {
     text-decoration: underline;
     color: var(--primary-color);
@@ -183,35 +177,11 @@ footer a:hover {
 
 @media (max-width: 768px) {
     .container {
-        max-width: 100%;
-        margin-top: 80px;
-        margin-bottom: 30px;
-        padding: 15px;
-        min-height: auto;
+        padding: 10px;
+        margin-top: 100px;
     }
 
     .form-container {
-        padding: 15px;
-    }
-
-    header {
-        height: 60px;
-    }
-
-    .container-header {
-        flex-direction: column;
-    }
-
-    .logo h5 {
-        margin-bottom: 10px;
-    }
-
-    nav ul li {
-        display: block;
-        margin: 5px 0;
-    }
-
-    #main-content {
         padding: 10px;
     }
 }
