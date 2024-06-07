@@ -35,7 +35,10 @@ if( isset($_POST["submit"]) ) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resep Makanan</title>
+    <meta name="keywords" content="cooking, cooking diary, food recipes, food, dish, masak, resep, resep makanan">
+    <meta name="description" content="Cooking Diary web">
+    <title>Upload Resep Makanan | CookingDiary</title>
+    <link rel="icon" type="image/png" href="assets/diary.png">
     <link rel="stylesheet" href="css/upload.css">
 </head>
 <body>

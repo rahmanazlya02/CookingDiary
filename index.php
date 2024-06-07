@@ -16,17 +16,17 @@ if (isset($_POST["search"])) {
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
+    <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE-edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+        <meta name="keywords" content="cooking, cooking diary, food recipes, food, dish, masak, resep, resep makanan">
+        <meta name="description" content="Cooking Diary web">
+        <title>Cooking Diary Web</title>
+        <link rel="icon" type="image/png" href="assets/diary.png">
         <!-----------Local Stylesheet Link----------->
         <link rel="stylesheet" href="css/indexstyle.css">
-
         <!-----------BoxIcon Stylesheet Link----------->
         <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-
-        <title>Cooking Diary Web</title>
     </head>
 
     <body>

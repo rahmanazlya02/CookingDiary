@@ -41,8 +41,12 @@ if( isset($_POST["submit"]) ) {
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Edit Resep Makanan</title>
+        <meta name="keywords" content="cooking, cooking diary, food recipes, food, dish, masak, resep, resep makanan">
+        <meta name="description" content="Cooking Diary web">
+        <title>Edit Resep Makanan | CookingDiary</title>
+        <link rel="icon" type="image/png" href="assets/diary.png">
         <link rel="stylesheet" href="css/upload.css">
         
     </head>

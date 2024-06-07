@@ -29,8 +29,11 @@ if (isset($_POST["search"])) {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="cooking, cooking diary, food recipes, food, dish, masak, resep, resep makanan">
+        <meta name="description" content="Cooking Diary web">
+        <title>All Recipes | CookingDiary</title>
+        <link rel="icon" type="image/png" href="assets/diary.png">
         <link rel="stylesheet" href="css/wholerecipes.css">
-        <title>Recipes-Cooking Diary</title>
     </head>
     <body>
         <header>

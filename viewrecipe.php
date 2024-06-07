@@ -17,8 +17,10 @@ $recipe = query("SELECT recipes.*, members.email AS email
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dish Details</title>
-    <!--<link href="../styles/main.css" rel="stylesheet" type="text/css">-->
+    <meta name="keywords" content="cooking, cooking diary, food recipes, food, dish, masak, resep, resep makanan">
+    <meta name="description" content="Cooking Diary web">
+    <title>Dish Details | CookingDiary</title>
+    <link rel="icon" type="image/png" href="assets/diary.png">
     <link rel="stylesheet" href="css/viewrecipe.css">
 </head>
 <body>

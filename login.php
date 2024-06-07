@@ -103,8 +103,11 @@ if(isset($_POST["login"])) {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/logstyles.css">
+        <meta name="keywords" content="cooking, cooking diary, food recipes, food, dish, masak, resep, resep makanan">
+        <meta name="description" content="Cooking Diary web">
         <title>Login Page | CookingDiary</title>
+        <link rel="icon" type="image/png" href="assets/diary.png">
+        <link rel="stylesheet" href="css/logstyles.css">
     </head>
 
     <body>
