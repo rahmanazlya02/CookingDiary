@@ -1,4 +1,0 @@
-RewriteEngine on
-RewriteCond %{HTTP_HOST} ^222212787nazlyarahmasusanto\.site$ [OR]
-RewriteCond %{HTTP_HOST} ^www\.222212787nazlyarahmasusanto\.site$
-RewriteRule ^/?$ "https\:\/\/222212787nazlyarahmasusanto\.site\/nazlya\/" [R=301,L]
